@@ -1,0 +1,33 @@
+#include<stdio.h>
+
+int main()
+{
+    char s[50];
+    int sum=0, i;
+    for(i=0;i<3;i++){
+        sum=0;
+        while(1)
+        {
+            gets(s);
+            if(s[0]=='*')
+            {
+                sum+=4;
+            }
+            if(s[1]=='*')
+            {
+                sum+=2;
+            }
+            if(s[2]=='*') 
+            {
+                sum+=1;
+            }
+            
+            if(s[0]>='c'&&s[6]=='w')
+            {
+                break;
+            }
+        }
+        printf("%d\n",sum);
+    }
+    return 0;
+}

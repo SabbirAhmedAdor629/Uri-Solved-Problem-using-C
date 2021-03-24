@@ -1,0 +1,40 @@
+#include<stdio.h>
+int main(){
+    int i,j,k,l,m,n,hn,a,b;
+    for(;;){
+        scanf("%d",&n);
+        if(n==0)break;
+        int arr[n][n];
+
+        for(i=0;i<n;i++){
+            a = i+1;
+            b = 2;
+            if(i==0){
+                for(j=0;j<n;j++){
+                    arr[i][j] = j+1;
+                }
+            }
+            else{
+                for(j=0;j<n;j++){
+                    if(a != 0){
+                        arr[i][j] = a;
+                        a--;
+                    }
+                    else{
+                        arr[i][j] = b;
+                        b++;
+                    }
+                }
+            }
+        }
+
+
+        for(i=0;i<n;i++){
+            for(j=0;j<n;j++){
+                if(j==0)printf("%3d",arr[i][j]);
+                else printf(" %3d",arr[i][j]);
+            }printf("\n");
+        }printf("\n");
+    }
+    return 0;
+}

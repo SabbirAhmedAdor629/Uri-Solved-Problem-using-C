@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    
+    int n, q, i, wordSize, strSize, iguais, biggest;
+    scanf("%d ", &n);
+
+    char words[10000][110], str[110], temp[110];
+    for (i = 0; i < n; i++)
+        scanf("%s", words[i]);
+    
+    scanf("%d ", &q);
+    
+    while (q--) {
+        
+        scanf("%s", str);
+        strSize = strlen(str);
+        iguais = 0;
+        biggest = 0;
+        
+        for (i = 0; i < n; i++) {
+            
+            strncpy(temp, words[i], strSize);
+            temp[strSize] = '\0';
+            
+            if (!strcmp(temp, str)) {
+                
+                iguais++;
+                wordSize = strlen(words[i]);
+                
+                if (wordSize > biggest)
+                    biggest = wordSize;
+                    
+            }
+            
+        }
+        
+        if (iguais)
+            printf("%d %d\n", iguais, biggest);
+        else
+            printf("-1\n");
+            
+    }
+    
+    return 0;
+    
+}
